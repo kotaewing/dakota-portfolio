@@ -1,11 +1,28 @@
 import React from 'react';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from '../Header';
 
 function App() {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
+  const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          type: prefersDarkMode ? 'light' : 'dark',
+        },
+      }),
+    [prefersDarkMode],
+  );
+
   return (
-    <div>
-      <Header />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Header />
+      </div>
+    </ThemeProvider>
   );
 }
 
