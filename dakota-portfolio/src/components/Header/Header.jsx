@@ -1,10 +1,15 @@
 import React from 'react';
 import Nav from '../Nav';
 
-function Header() {
+function Header(props) {
     return (
     <header>
-        <Nav currentCategory='Business'/>
+        <Nav 
+          categories={props.categories}
+          setCurrentCategory={props.setCurrentCategory}
+          currentCategory={props.currentCategory}
+          contactSelected={props.contactSelected}
+          setContactSelected={props.setContactSelected}/>
     </header>
     )
 }

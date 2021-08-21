@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core';
 
 
   function Nav() {
-    const useStyles = makeStyles(theme => ({
+    const useStyles = makeStyles(() => ({
         navBar: {
             background: 'black',
         }
@@ -18,16 +18,19 @@ import { makeStyles } from '@material-ui/core';
       <Box height={64} display={'flex'} className={classes.navBar}>
           <NavMenu useStyles={useZoomNavigationMenuStyles}>
             <NavItem>
-              New Releases
+              <h2>Dakota Ewing</h2>
             </NavItem>
             <NavItem>
-              Men
+              About Me
             </NavItem>
             <NavItem>
-              Women
+              Portfolio
             </NavItem>
             <NavItem>
-              Kids
+              Contact
+            </NavItem>
+            <NavItem>
+              Resume
             </NavItem>
           </NavMenu>
       </Box>
